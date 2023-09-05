@@ -59,8 +59,8 @@ defmodule Lexer do
   defp tokenize(<<",", rest::binary>>), do: {:comma, rest}
   defp tokenize(<<"(", rest::binary>>), do: {:lparen, rest}
   defp tokenize(<<")", rest::binary>>), do: {:rparen, rest}
-  defp tokenize(<<"{", rest::binary>>), do: {:lsquirly, rest}
-  defp tokenize(<<"}", rest::binary>>), do: {:rsquirly, rest}
+  defp tokenize(<<"{", rest::binary>>), do: {:lbrace, rest}
+  defp tokenize(<<"}", rest::binary>>), do: {:rbrace, rest}
   defp tokenize(<<"=", rest::binary>>), do: {:assign, rest}
   defp tokenize(<<"+", rest::binary>>), do: {:plus, rest}
   defp tokenize(<<"-", rest::binary>>), do: {:minus, rest}
@@ -101,7 +101,7 @@ defmodule Lexer do
   defp tokenize_word("return"), do: :return
   defp tokenize_word(ident), do: {:ident, ident}
 
-  def hello do
+  def hello() do
     :world
   end
 end

@@ -24,3 +24,5 @@ interp_lix-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+lexer
